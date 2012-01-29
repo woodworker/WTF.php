@@ -1,0 +1,4 @@
+Here the typecasting of PHP will convert the string test to an int.
+an because "test" doesnt start with a number it will be casted to 0.
+And because the test string casted to 0 is the first match the real 0
+and the case is stopped with break only this will be executed.
