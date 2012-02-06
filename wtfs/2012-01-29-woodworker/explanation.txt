@@ -1,4 +1,11 @@
-Here the typecasting of PHP will convert the string test to an int.
-an because "test" doesnt start with a number it will be casted to 0.
-And because the test string casted to 0 is the first match the real 0
-and the case is stopped with break only this will be executed.
+In this WTF, PHP's typecasting is the root of all evil.
+
+Because we give the switch statement an integer all case block keys will
+be converted to integers.
+And we all know that string that do not contain any number as first
+charachter the string will be converted to 0
+
+And if we check for 'test' and 0 and the string comparsion is before the
+integer comparsion we are lost.
+
+So we learn not to mix types in a switch block.
