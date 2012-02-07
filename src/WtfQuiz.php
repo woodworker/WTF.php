@@ -4,6 +4,7 @@ class WtfQuiz {
     protected $questionDir;
     protected $collectedQuestions = array();
     protected $maxQuestions;
+    protected $score = 0;
 
     public function __construct($dir, $maxQuestions = 5) {
         $this->questionDir = $dir;
@@ -14,6 +15,13 @@ class WtfQuiz {
         if ($this->getQuestionCount() < $maxQuestions ) {
             $this->maxQuestions = $this->getQuestionCount();
         }
+        $this->welcome();
+    }
+
+    protected function welcome() {
+        passthru('clear');
+
+        echo "Welcome to the WTF.php Quiz \n\n\n\n";
     }
 
     protected function collectQuestions () {
@@ -23,6 +31,7 @@ class WtfQuiz {
                 $this->collectedQuestions[] = $oneDir->getPathname();
             }
         }
+        shuffle( $this->collectedQuestions );
     }
 
     protected function popQuestionDir() {
@@ -58,6 +67,8 @@ class WtfQuiz {
                 echo "\n";
             }
         }
+        $this->askUser('next with enter ...');
+        passthru('clear');
     }
 
     protected function askUser($question) {
