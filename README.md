@@ -22,7 +22,7 @@ Description
   
   * Write a short description in a file called explanation.txt
   
-  * Create a push request.
+  * Create a pull request.
   
   * ...
   
