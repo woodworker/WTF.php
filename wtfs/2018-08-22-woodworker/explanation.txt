@@ -1,0 +1,9 @@
+Because a lot of php string search functions have this nice note in the documentation
+
+  "If needle is not a string, it is converted to an integer and
+  applied as the ordinal value of a character."
+
+Which bascially means the Integer in this example will be run throug chr()
+and chr(10010319) === _ and chr(1337) === 9
+
+https://3v4l.org/B214Z
